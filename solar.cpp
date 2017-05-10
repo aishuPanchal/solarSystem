@@ -134,59 +134,9 @@ void display()
 	circle(70,1,0.4,0,venusX,venusY);//mercury
 
 	ellipse(earthOrbX,earthOrbY,0.4,0.1,0.8,0,0); //earth orbit
-	 circle(80,0.4,0.1,1,earthX,earthY);//earth
+	circle(80,0.4,0.1,1,earthX,earthY);//earth
     ellipse(moonOrbX,moonOrbY,0.2,1,1,earthX,earthY); //moon orbit
 	circle(40,0.9,0.9,0.9,moonX,moonY);//moon
-/*	    if(earthY>0 && earthX>= -700 && earthX<0){
-        rj = -(earthX/10);
-        if(rj<=30){
-            rj=30;
-        }
-         circle(rj,0.4,0.1,1,earthX,earthY);//earth
-         ellipse(rj+moonOrbX/2,rj+moonOrbY/6,0.2,1,1,earthX,earthY); //moon orbit
-	circle(40,0.9,0.9,0.9,moonX+rj,moonY+rj);//moon
-    }
-
-
-
-    else if(earthY>0 && earthX<= 700 && earthX>=0){
-        rj = (earthX/10);
-        if(rj<=30){
-            rj=30;
-        }
-
-        circle(rj,0.4,0.1,1,earthX,earthY);//earth
-        ellipse(rj+moonOrbX/2,rj+moonOrbY/6,0.2,1,1,earthX,earthY); //moon orbit
-	circle(40,0.9,0.9,0.9,moonX+rj,moonY+rj);//moon
-    }
-
-    else if(earthY<0 && earthX<700 && earthX>0){
-
-        rj = earthY/3;
-        rj=-rj;
-        if(rj<=70){
-            rj =70 ;
-        }
-
-          circle(rj,0.4,0.1,1,earthX,earthY);//earth
-          ellipse(rj+moonOrbX/2,rj+moonOrbY/6,0.2,1,1,earthX,earthY); //moon orbit
-	circle(40,0.9,0.9,0.9,moonX+rj,moonY+rj);//moon
-    }
-
-    else if(earthY<0 && earthX>-700 && earthX<=0){
-        rj = earthY/3;
-        rj=-rj;
-        if(rj<=70){
-            rj=70;
-        }
-
-        circle(rj,0.4,0.1,1,earthX,earthY);//earth
-        ellipse(rj+moonOrbX/2,rj+moonOrbY/6,0.2,1,1,earthX,earthY); //moon orbit
-	circle(40,0.9,0.9,0.9,moonX+rj,moonY);//moon
-
-    }*/
-
-
 
 	ellipse(marsOrbX,marsOrbY,0.7,0.1,0,0,0); //mars orbit
     if(marsY>0 && marsX>= -1000 && marsX<0){
@@ -230,48 +180,7 @@ void display()
 	//circle(60,0.7,0.1,0,marsX,marsY);//mars
 
 	ellipse(jupiterOrbX,jupiterOrbY,1,1,0.2,0,0); //jupiter orbit
-	/*if(jupiterY>0 && jupiterX>-1400 && jupiterX<-1300){
-        circle(160,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-	else if(jupiterY>0 && jupiterX<-1200 && jupiterX>-1300){
-        circle(150,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<-1100 && jupiterX>-1200){
-        circle(140,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<-1000 && jupiterX>-1100){
-        circle(130,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<-900 && jupiterX>-1000){
-        circle(120,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<-800 && jupiterX>-900){
-        circle(110,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<800 && jupiterX>-800){
-        circle(100,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<900 && jupiterX>800){
-        circle(110,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<1000 && jupiterX>900){
-        circle(120,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<1100 && jupiterX>1000){
-        circle(130,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<1200 && jupiterX>1100){
-        circle(140,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-    else if(jupiterY>0 && jupiterX<1300 && jupiterX>1200){
-        circle(150,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-	else if(jupiterY>0 && jupiterX<1400 && jupiterX>1300){
-        circle(160,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}
-	else{
-        circle(170,1,1,0.2,jupiterX,jupiterY);//jupiter
-	}*/
+
 
     if(jupiterY>0 && jupiterX>= -1400 && jupiterX<0){
         rj = -(jupiterX/7);
@@ -281,8 +190,7 @@ void display()
                 if(rj>=200){
             rj=200;
         }
-        //rj = sin(jupiterX)*170;
-        //rj=-rj;
+        
         circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
     }
 
@@ -306,10 +214,7 @@ void display()
         }
         circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
     }
-  //  else if(jupiterY<0 && jupiterX<=60 && jupiterX>=-60){
-        //rj = jupiterX/2;
-  //      circle(160,1,1,0.2,jupiterX,jupiterY);//jupiter
-   // }
+ 
     else if(jupiterY<0 && jupiterX>-1400 && jupiterX<=0){
         rj = jupiterY/5;
         rj=-rj;
@@ -327,8 +232,7 @@ void display()
             rj=30;
         }
 
-        //rj = sin(jupiterX)*170;
-        //rj=-rj;
+       
         circle(rj,0.9,0.8,0.4,saturnX,saturnY);//saturn
         ellipse(rj+100,rj/3,0.9,0.8,0.5,saturnX,saturnY);
         ellipse(rj+150,rj/2,0.9,0.8,0.5,saturnX,saturnY);
@@ -406,7 +310,7 @@ void animation()
 void init(void)
 {
 	glClearColor (0.1, 0, 0.1, 0.0);
-	//gluOrtho2D((-6600.0,2000.0), (6600.0,-2000.0), (0,-3400.0), (0,3400.0));
+	
 	gluOrtho2D(-3300,3300,-4000,4000);
 }
 
