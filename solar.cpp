@@ -139,144 +139,148 @@ void display()
 	circle(40,0.9,0.9,0.9,moonX,moonY);//moon
 
 	ellipse(marsOrbX,marsOrbY,0.7,0.1,0,0,0); //mars orbit
-    if(marsY>0 && marsX>= -1000 && marsX<0){
-        rj = -(marsX/15);
-        if(rj<=30){
-            rj=30;
-        }
-        circle(rj,0.7,0.1,0,marsX,marsY);//mars
-    }
+	circle(60,0.7,0.1,0,marsX,marsY);//mars
+    
+    // if(marsY>0 && marsX>= -1000 && marsX<0){
+    //     rj = -(marsX/15);
+    //     if(rj<=30){
+    //         rj=30;
+    //     }
+    //     circle(rj,0.7,0.1,0,marsX,marsY);//mars
+    // }
 
-    else if(marsY>0 && marsX<= 1000 && marsX>=0){
-        rj = (marsX/15);
-        if(rj<=30){
-            rj=30;
-        }
+    // else if(marsY>0 && marsX<= 1000 && marsX>=0){
+    //     rj = (marsX/15);
+    //     if(rj<=30){
+    //         rj=30;
+    //     }
 
-       circle(rj,0.7,0.1,0,marsX,marsY);//mars
-    }
+    //    circle(rj,0.7,0.1,0,marsX,marsY);//mars
+    // }
 
-    else if(marsY<0 && marsX<1400 && marsX>0){
+    // else if(marsY<0 && marsX<1400 && marsX>0){
 
-        rj = marsY/5;
-        rj=-rj;
-        if(rj<=67){
-            rj = 67;
-        }
+    //     rj = marsY/5;
+    //     rj=-rj;
+    //     if(rj<=67){
+    //         rj = 67;
+    //     }
 
-         circle(rj,0.7,0.1,0,marsX,marsY);//mars
-    }
+    //      circle(rj,0.7,0.1,0,marsX,marsY);//mars
+    // }
 
-    else if(marsY<0 && marsX>-1400 && marsX<=0){
-        rj = marsY/5;
-        rj=-rj;
-        if(rj<=67){
-            rj=67;
-        }
+    // else if(marsY<0 && marsX>-1400 && marsX<=0){
+    //     rj = marsY/5;
+    //     rj=-rj;
+    //     if(rj<=67){
+    //         rj=67;
+    //     }
 
-        circle(rj,0.7,0.1,0,marsX,marsY);//mars
-    }
+    //     circle(rj,0.7,0.1,0,marsX,marsY);//mars
+    // }
 
-	//circle(60,0.7,0.1,0,marsX,marsY);//mars
 
 	ellipse(jupiterOrbX,jupiterOrbY,1,1,0.2,0,0); //jupiter orbit
+	circle(100,1,1,0.2,jupiterX,jupiterY);
 
-
-    if(jupiterY>0 && jupiterX>= -1400 && jupiterX<0){
-        rj = -(jupiterX/7);
-        if(rj<=30){
-            rj=30;
-        }
-                if(rj>=200){
-            rj=200;
-        }
+    // if(jupiterY>0 && jupiterX>= -1400 && jupiterX<0){
+    //     rj = -(jupiterX/7);
+    //     if(rj<=30){
+    //         rj=30;
+    //     }
+    //             if(rj>=200){
+    //         rj=200;
+    //     }
         
-        circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
-    }
+    //     circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
+    // }
 
-    else if(jupiterY>0 && jupiterX<= 1400 && jupiterX>=0){
-        rj = (jupiterX/7);
-        if(rj<=30){
-            rj=30;
-        }
-        if(rj>=200){
-            rj=200;
-        }
-        circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
-    }
+    // else if(jupiterY>0 && jupiterX<= 1400 && jupiterX>=0){
+    //     rj = (jupiterX/7);
+    //     if(rj<=30){
+    //         rj=30;
+    //     }
+    //     if(rj>=200){
+    //         rj=200;
+    //     }
+    //     circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
+    // }
 
-    else if(jupiterY<0 && jupiterX<1400 && jupiterX>0){
+    // else if(jupiterY<0 && jupiterX<1400 && jupiterX>0){
 
-        rj = jupiterY/5;
-        rj=-rj;
-        if(rj<=200){
-            rj = 200;
-        }
-        circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
-    }
+    //     rj = jupiterY/5;
+    //     rj=-rj;
+    //     if(rj<=200){
+    //         rj = 200;
+    //     }
+    //     circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
+    // }
  
-    else if(jupiterY<0 && jupiterX>-1400 && jupiterX<=0){
-        rj = jupiterY/5;
-        rj=-rj;
-        if(rj<=200){
-            rj=200;
-        }
-        circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
-    }
+    // else if(jupiterY<0 && jupiterX>-1400 && jupiterX<=0){
+    //     rj = jupiterY/5;
+    //     rj=-rj;
+    //     if(rj<=200){
+    //         rj=200;
+    //     }
+    //     circle(rj,1,1,0.2,jupiterX,jupiterY);//jupiter
+    // }
 
 
 	ellipse(saturnOrbX,saturnOrbY,0.9,0.8,0.3,0,0); //saturn orbit
-	    if(saturnY>0 && saturnX>= -1900 && saturnX<0){
-        rj = -(saturnX/15);
-        if(rj<=30){
-            rj=30;
-        }
+	circle(70,0.9,0.8,0.4,saturnX,saturnY);//saturn
+    ellipse(70+100,70/3,0.9,0.8,0.5,saturnX,saturnY);
+    ellipse(70+150,70/2,0.9,0.8,0.5,saturnX,saturnY);
+	   //  if(saturnY>0 && saturnX>= -1900 && saturnX<0){
+    //     rj = -(saturnX/15);
+    //     if(rj<=30){
+    //         rj=30;
+    //     }
 
        
-        circle(rj,0.9,0.8,0.4,saturnX,saturnY);//saturn
-        ellipse(rj+100,rj/3,0.9,0.8,0.5,saturnX,saturnY);
-        ellipse(rj+150,rj/2,0.9,0.8,0.5,saturnX,saturnY);
-    }
+    //     circle(rj,0.9,0.8,0.4,saturnX,saturnY);//saturn
+    //     ellipse(rj+100,rj/3,0.9,0.8,0.5,saturnX,saturnY);
+    //     ellipse(rj+150,rj/2,0.9,0.8,0.5,saturnX,saturnY);
+    // }
 
-    else if(saturnY>0 && saturnX<= 1900 && saturnX>=0){
-        rj = (saturnX/15);
-        if(rj<=30){
-            rj=30;
-        }
+    // else if(saturnY>0 && saturnX<= 1900 && saturnX>=0){
+    //     rj = (saturnX/15);
+    //     if(rj<=30){
+    //         rj=30;
+    //     }
 
-        circle(rj,0.9,0.8,0.4,saturnX,saturnY);//saturn
-        ellipse(rj+100,rj/3,0.9,0.8,0.5,saturnX,saturnY);
-        ellipse(rj+150,rj/2,0.9,0.8,0.5,saturnX,saturnY);
-    }
+    //     circle(rj,0.9,0.8,0.4,saturnX,saturnY);//saturn
+    //     ellipse(rj+100,rj/3,0.9,0.8,0.5,saturnX,saturnY);
+    //     ellipse(rj+150,rj/2,0.9,0.8,0.5,saturnX,saturnY);
+    // }
 
-    else if(saturnY<0 && saturnX<1900 && saturnX>0){
+    // else if(saturnY<0 && saturnX<1900 && saturnX>0){
 
-        rj = saturnY/4;
-        rj=-rj;
-        if(rj<=127){
-            rj = 127;
-        }
-        if(rj>=190){
-            rj=190;
-        }
-        circle(rj,0.9,0.8,0.4,saturnX,saturnY);//saturn
-        ellipse(rj+100,rj/3,0.9,0.8,0.5,saturnX,saturnY);
-        ellipse(rj+150,rj/2,0.9,0.8,0.5,saturnX,saturnY);
-    }
-    else if(saturnY<0 && saturnX>=-1900 && saturnX<=0){
-        rj = saturnY/4;
-        rj=-rj;
-        if(rj<=127){
-            rj=127;
-        }
-        if(rj>=190){
-            rj=190;
-        }
+    //     rj = saturnY/4;
+    //     rj=-rj;
+    //     if(rj<=127){
+    //         rj = 127;
+    //     }
+    //     if(rj>=190){
+    //         rj=190;
+    //     }
+    //     circle(rj,0.9,0.8,0.4,saturnX,saturnY);//saturn
+    //     ellipse(rj+100,rj/3,0.9,0.8,0.5,saturnX,saturnY);
+    //     ellipse(rj+150,rj/2,0.9,0.8,0.5,saturnX,saturnY);
+    // }
+    // else if(saturnY<0 && saturnX>=-1900 && saturnX<=0){
+    //     rj = saturnY/4;
+    //     rj=-rj;
+    //     if(rj<=127){
+    //         rj=127;
+    //     }
+    //     if(rj>=190){
+    //         rj=190;
+    //     }
 
-        circle(rj,0.9,0.8,0.4,saturnX,saturnY);//saturn
-        ellipse(rj+100,rj/3,0.9,0.8,0.5,saturnX,saturnY);
-        ellipse(rj+150,rj/2,0.9,0.8,0.5,saturnX,saturnY);
-    }
+    //     circle(rj,0.9,0.8,0.4,saturnX,saturnY);//saturn
+    //     ellipse(rj+100,rj/3,0.9,0.8,0.5,saturnX,saturnY);
+    //     ellipse(rj+150,rj/2,0.9,0.8,0.5,saturnX,saturnY);
+    // }
 
 
 
