@@ -218,10 +218,9 @@ public:
 };
 
 planet mercury(400, 130 , -400 , 0 , 0.002, 45,1,0,0) , venus(500, 230 , -500 , 0 , 0.0009, 70,1,0.4,0);
-float venOrbX= 500 , venusX = -500, venOrbY =230 , venusY = 0 , venDx = 0.9;
-float earthOrbX= 700 , earthX = -700, earthOrbY =400 , earthY = 0 , earthDx = 0.6;
-float moonOrbX= 180 , moonOrbY =100  , moonDx = 5,moonX=-earthX-180,moonY=0;
-float marsOrbX= 1000 , marsX = -1000, marsOrbY =580 , marsY = 0 , marsDx = 0.3;
+planet earth(700, 400 , -700 , 0 , 0.0005 , 70 , 0 , 0 , 1 );
+planet mars(1000,580,-1000, 0 , 0.0008, 60, 0.7 , 0.1 , 0 );
+//float moonOrbX= 180 , moonOrbY =100  , moonDx = 5,moonX=-earthX-180,moonY=0;
 float jupiterOrbX= 1400 , jupiterX = -1400, jupiterOrbY =750 , jupiterY = 0 , jupiterDx = 0.1;
 float saturnOrbX= 1900 , saturnX = -1900, saturnOrbY =900 , saturnY = 0 , saturnDx = 0.09;
 float uraOrbX= 2500 , uraX = -2500, uraOrbY =1100 , uraY = 0 , uraDx = 0.08;
@@ -258,56 +257,12 @@ void display()
 
 	circle(100,1,0.2,0,0,0); //sun
 	mercury.drawMe();
-
 	venus.drawMe();
-
-	ellipse(earthOrbX,earthOrbY,0.4,0.1,0.8,0,0); //earth orbit
-	circle(80,0.4,0.1,1,earthX,earthY);//earth
-    ellipse(moonOrbX,moonOrbY,0.2,1,1,earthX,earthY); //moon orbit
-	circle(40,0.9,0.9,0.9,moonX,moonY);//moon
-
-	ellipse(marsOrbX,marsOrbY,0.7,0.1,0,0,0); //mars orbit
-	circle(60,0.7,0.1,0,marsX,marsY);//mars
-
-    // if(marsY>0 && marsX>= -1000 && marsX<0){
-    //     rj = -(marsX/15);
-    //     if(rj<=30){
-    //         rj=30;
-    //     }
-    //     circle(rj,0.7,0.1,0,marsX,marsY);//mars
-    // }
-
-    // else if(marsY>0 && marsX<= 1000 && marsX>=0){
-    //     rj = (marsX/15);
-    //     if(rj<=30){
-    //         rj=30;
-    //     }
-
-    //    circle(rj,0.7,0.1,0,marsX,marsY);//mars
-    // }
-
-    // else if(marsY<0 && marsX<1400 && marsX>0){
-
-    //     rj = marsY/5;
-    //     rj=-rj;
-    //     if(rj<=67){
-    //         rj = 67;
-    //     }
-
-    //      circle(rj,0.7,0.1,0,marsX,marsY);//mars
-    // }
-
-    // else if(marsY<0 && marsX>-1400 && marsX<=0){
-    //     rj = marsY/5;
-    //     rj=-rj;
-    //     if(rj<=67){
-    //         rj=67;
-    //     }
-
-    //     circle(rj,0.7,0.1,0,marsX,marsY);//mars
-    // }
-
-
+	earth.drawMe();
+	mars.drawMe();
+ //    ellipse(moonOrbX,moonOrbY,0.2,1,1,earthX,earthY); //moon orbit
+	// circle(40,0.9,0.9,0.9,moonX,moonY);//moon
+	
 	ellipse(jupiterOrbX,jupiterOrbY,1,1,0.2,0,0); //jupiter orbit
 	circle(100,1,1,0.2,jupiterX,jupiterY);
 
@@ -430,13 +385,13 @@ void animation()
 {
 	mercury.getNextValue();
 	venus.getNextValue();
-	getNextValue(earthOrbX, earthOrbY , earthDx , earthX , earthY,0.0005);
-	getNextValue(marsOrbX, marsOrbY , marsDx , marsX , marsY,0.0008);
+	earth.getNextValue();
+	mars.getNextValue();
 	getNextValue(jupiterOrbX, jupiterOrbY , jupiterDx , jupiterX , jupiterY,0.0009);
 	getNextValue(saturnOrbX, saturnOrbY , saturnDx , saturnX , saturnY,0.0008);
 	getNextValue(uraOrbX, uraOrbY , uraDx , uraX , uraY,0.0004);
 	getNextValue(nepOrbX, nepOrbY , nepDx , nepX , nepY,0.0001);
-	getMoonValue(moonOrbX, moonOrbY , moonDx ,moonX, moonY, earthX , earthY);
+	//getMoonValue(moonOrbX, moonOrbY , moonDx ,moonX, moonY, earthX , earthY);
 	display();
 }
 void init(void)
