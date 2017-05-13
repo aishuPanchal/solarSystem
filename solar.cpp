@@ -137,6 +137,30 @@ public:
 	}
 };
 
+class moon : public planet
+{
+private:
+	float parentX;
+	float parentY;
+public:
+	moon(planet p , float x, float y , float rate ,float size ,float majorAxis, float minorAxis, float red = 0 , float green = 0, float blue = 0 );
+	{
+		this->x = x;
+		this->y = y;
+		this->parentX = p.x;
+		this->parentY = p.y;
+		this->ang  = p.ang;
+		this->red = red;
+		this->green = green;
+		this->blue = blue;
+		this->rate = rate;
+		this->size = size;
+		this->orb.x = majorAxis;
+		this->orb.y = minorAxis;
+
+	}
+};
+
 planet mercury(400, 130 , -400 , 0 , 0.002, 45,1,0,0) , venus(500, 230 , -500 , 0 , 0.0009, 70,1,0.4,0);
 planet earth(700, 400 , -700 , 0 , 0.0005 , 70 , 0 , 0 , 1 );
 planet mars(1000,580,-1000, 0 , 0.0008, 60, 0.7 , 0.1 , 0 );
