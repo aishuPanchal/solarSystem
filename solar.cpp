@@ -98,7 +98,7 @@ public:
 
 class planet
 {
-private:
+public:
 	float x;
 	float y;
 	float ang;
@@ -107,7 +107,6 @@ private:
 	float rate;
 	orbit orb;
 	glFunctions gl;
-public:
 	planet ( float majorAxis , float minorAxis, float x , float y ,float rate , float size ,float red = 0 , float green = 0 , float blue = 0 ,float ang = 0)
 	{
 		this->x = x;
@@ -137,19 +136,27 @@ public:
 	}
 };
 
-class moon : public planet
+class moon 
 {
-private:
+
+public:
+	float x;
+	float y;
+	float ang;
+	float red ,green ,blue;
+	float size;
+	float rate;
+	orbit orb;
+	glFunctions gl;
 	float parentX;
 	float parentY;
-public:
-	moon(planet p , float x, float y , float rate ,float size ,float majorAxis, float minorAxis, float red = 0 , float green = 0, float blue = 0 );
+	moon(float parentX, float parentY , float x, float y , float rate ,float size ,float majorAxis, float minorAxis, float red = 0 , float green = 0, float blue = 0 )
 	{
 		this->x = x;
 		this->y = y;
-		this->parentX = p.x;
-		this->parentY = p.y;
-		this->ang  = p.ang;
+		this->parentX = parentX;
+		this->parentY = parentY;
+		this->ang  = 0;
 		this->red = red;
 		this->green = green;
 		this->blue = blue;
@@ -157,10 +164,22 @@ public:
 		this->size = size;
 		this->orb.x = majorAxis;
 		this->orb.y = minorAxis;
-
 	}
-};
+	void getNextValue()
+	{
+		if(ang < 0 ) ang = 2 * PI;
+		ang-=rate;
+		x = orb.x * cos(ang) + parentX ;
+		y =  orb.y * sin(ang) + parentY;
+	}
 
+	void drawMe()
+	{
+		gl.ellipse(orb.x,orb.y,red,green,blue,parentX,parentY); 
+		gl.circle(size,red,green,blue,x,y);
+	}
+
+};
 planet mercury(400, 130 , -400 , 0 , 0.002, 45,1,0,0) , venus(500, 230 , -500 , 0 , 0.0009, 70,1,0.4,0);
 planet earth(700, 400 , -700 , 0 , 0.0005 , 70 , 0 , 0 , 1 );
 planet mars(1000,580,-1000, 0 , 0.0008, 60, 0.7 , 0.1 , 0 );
@@ -168,19 +187,8 @@ planet jupiter(1400, 750 , -1400 , 0 , 0.0009 , 100 , 1,1,0.2);
 planet saturn(1900 , 900 , -1900 , 0 ,  0.0008, 70 , 0.9 , 0.8 , 0.4);
 planet uranus(2500 , 1100 , -2500 , 0 , 0.0004 , 100 , 0.5, 0.9, 0.4);
 planet neptune(3200 , 1300 , -3200 , 0 , 0.0001 , 75 , 0.5 , 0.1 , 1);
-//float moonOrbX= 180 , moonOrbY =100  , moonDx = 5,moonX=-earthX-180,moonY=0;
+moon m (earth.x, earth.y, (earth.x -180) , 0 , 0.002 , 40 , 180 , 100 , 1, 1, 1);
 
-
-
-
-//getMoonValue(moonOrbX, moonOrbY , moonDx ,moonX, moonY, earthX , earthY);
-void getMoonValue(float rx , float ry , float &th , float &currentX , float &currentY , float earthX , float earthY){
-	if(th < 0) th = 2 * PI;
-	th -= 0.001;
-	currentX = rx * cos(th) + earthX;
-	currentY = ry * sin(th) + earthY;
-
-}
 
 void display()
 {
@@ -188,7 +196,6 @@ void display()
 
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	circle(100,1,0.2,0,0,0); //sun
 	mercury.drawMe();
 	venus.drawMe();
 	earth.drawMe();
@@ -197,9 +204,7 @@ void display()
 	saturn.drawMe();
 	uranus.drawMe();
 	neptune.drawMe();
- //    ellipse(moonOrbX,moonOrbY,0.2,1,1,earthX,earthY); //moon orbit
-	// circle(40,0.9,0.9,0.9,moonX,moonY);//moon
-	
+	m.drawMe();
 	glFlush();
 
 }
@@ -214,6 +219,7 @@ void animation()
 	saturn.getNextValue();
 	neptune.getNextValue();
 	uranus.getNextValue();
+	m.getNextValue();
 	//getMoonValue(moonOrbX, moonOrbY , moonDx ,moonX, moonY, earthX , earthY);
 	display();
 }
