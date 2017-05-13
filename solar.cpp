@@ -165,8 +165,10 @@ public:
 		this->orb.x = majorAxis;
 		this->orb.y = minorAxis;
 	}
-	void getNextValue()
+	void getNextValue(float parentX, float parentY)
 	{
+		this->parentX = parentX;
+		this->parentY = parentY;
 		if(ang < 0 ) ang = 2 * PI;
 		ang-=rate;
 		x = orb.x * cos(ang) + parentX ;
@@ -188,14 +190,11 @@ planet saturn(1900 , 900 , -1900 , 0 ,  0.0008, 70 , 0.9 , 0.8 , 0.4);
 planet uranus(2500 , 1100 , -2500 , 0 , 0.0004 , 100 , 0.5, 0.9, 0.4);
 planet neptune(3200 , 1300 , -3200 , 0 , 0.0001 , 75 , 0.5 , 0.1 , 1);
 moon m (earth.x, earth.y, (earth.x -180) , 0 , 0.002 , 40 , 180 , 100 , 1, 1, 1);
-
+moon saturnRing1 (saturn.x, saturn.y , (saturn.x - 180) , 0 , 0.002 , 0 , 180 , 100 , 0.9 , 0.8, 0.4);
 
 void display()
 {
-	float rj;
-
 	glClear(GL_COLOR_BUFFER_BIT);
-
 	mercury.drawMe();
 	venus.drawMe();
 	earth.drawMe();
@@ -205,6 +204,7 @@ void display()
 	uranus.drawMe();
 	neptune.drawMe();
 	m.drawMe();
+	saturnRing1.drawMe();
 	glFlush();
 
 }
@@ -219,8 +219,8 @@ void animation()
 	saturn.getNextValue();
 	neptune.getNextValue();
 	uranus.getNextValue();
-	m.getNextValue();
-	//getMoonValue(moonOrbX, moonOrbY , moonDx ,moonX, moonY, earthX , earthY);
+	m.getNextValue(earth.x , earth.y);
+	saturnRing1.getNextValue(saturn.x, saturn.y);
 	display();
 }
 void init(void)
